@@ -4,28 +4,34 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             title: "London, England",
             description: "A hidden gem",
-            image: "images/london.jpg",
+            image: "./",
         },
     ];
 
-    function createLocation(location, image, description, className) {
+    function createLocation(location, image, description, className, titleClass, descriptionClass) {
         const div = document.createElement("div");
         div.className = className;
         const img = document.createElement("img");
         img.src = image;
         const h3 = document.createElement("h3");
+        h3.className = titleClass;
         h3.textContent = location;
         const p = document.createElement("p");
+        p.className = descriptionClass;
         p.textContent = description;
+
+        const text = document.createElement("div");
+
         div.appendChild(img);
-        div.appendChild(h3);
-        div.appendChild(p);
+        div.appendChild(text);
+        text.appendChild(h3);
+        text.appendChild(p);
         return div;
     }
 
     const destinationContainer = document.getElementById("suggested-destinations");
     destinations.forEach(destination => {
-        const location = createLocation(destination.title, destination.image, destination.description, "flex gap-2");
+        const location = createLocation(destination.title, destination.image, destination.description, "flex gap-2", "text-sm text-gray-900 font-medium", "text-sm text-gray-500");
         destinationContainer.appendChild(location);
     });
 
