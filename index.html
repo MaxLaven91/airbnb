@@ -3,20 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Page</title>
+  <title>Airbnb</title>
   <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
     <section>
-        <div>
-            <input class="w-full" type="text" placeholder="Start search" />
+        <div class="pt-3 px-6">
+            <button class="flex w-full rounded-full  h-14 border border-gray-200 shadow-lg justify-center items-center gap-1" id="search-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                    <path fill-rule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-sm text-gray-900">Start your search</span>
+            </button>
+        </div>
+
+        <div id="modal-header">
+            
         </div>
     </section>
-
-  <h1>Hello, world!</h1>
-  <p>This is a basic HTML boilerplate.</p>
-
-  <script src="script.js"></script>
+  <script src="button.js"></script>
 </body>
 </html>
