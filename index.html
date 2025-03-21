@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Airbnb</title>
-  <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
     <section>
+        <!-- Search Button -->
         <div class="pt-3 px-6">
-            <button class="flex w-full rounded-full  h-14 border border-gray-200 shadow-lg justify-center items-center gap-1" id="search-button">
+            <button class="flex w-full rounded-full h-14 border border-gray-200 shadow-lg justify-center items-center gap-1" id="search-button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
                     <path fill-rule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clip-rule="evenodd" />
                 </svg>
@@ -18,8 +18,29 @@
             </button>
         </div>
 
-        <div id="modal-header">
-            
+        <!-- Full Screen Modal -->
+        <div id="modal" class="bg-gray-50 hidden fixed w-full z-999 h-full z-[9999] top-0 left-0">
+            <div id="modal-header" class="flex pt-3 px-6 justify-between items-center">
+                <button id="close-button" class="rounded-full border-gray-300 border p-2 bg-white mr-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+                    <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                  </svg>
+                </button>
+                <div id="modal-tabs" class="flex gap-4 grow justify-center text-md text-gray-900">
+                    <button><span>Stays</span></button>
+                    <button><span>Experiences</span></button>
+                </div>
+            </div>
+            <div id="modal-content" class="h-full p-4">
+                <div class="flex flex-col p-4 bg-white rounded-xl shadow-xl gap-6">
+                    <h3 class="text-3xl font-semibold text-gray-900">Where to?</h3>
+                    <input type="text" class="w-full h-14 border border-gray-300 rounded-lg px-4" placeholder="Search destinations" />
+                    <p class="text-sm text-gray-700">Suggested desitnations</p>
+                </div>
+            </div>
+            <div id="modal-footer">
+
+            </div>
         </div>
     </section>
   <script src="button.js"></script>
