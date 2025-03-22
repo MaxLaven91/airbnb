@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Airbnb</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airbnb</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+
 <body>
     <section>
         <!-- Search Button -->
         <div class="pt-3 px-6">
-            <button class="flex w-full rounded-full h-14 border border-gray-200 shadow-lg justify-center items-center gap-1" id="search-button">
+            <button
+                class="flex w-full rounded-full h-14 border border-gray-200 shadow-lg justify-center items-center gap-2 font-medium"
+                id="search-button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
-                    <path fill-rule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clip-rule="evenodd" />
+                    <path fill-rule="evenodd"
+                        d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                        clip-rule="evenodd" />
                 </svg>
                 <span class="text-sm text-gray-900">Start your search</span>
             </button>
@@ -23,8 +29,9 @@
             <div id="modal-header" class="flex pt-3 px-6 justify-between items-center">
                 <button id="close-button" class="rounded-full border-gray-300 border p-2 bg-white mr-auto">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
-                    <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
-                  </svg>
+                        <path
+                            d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+                    </svg>
                 </button>
                 <div id="modal-tabs" class="flex gap-4 grow justify-center text-md text-gray-900">
                     <button><span>Stays</span></button>
@@ -32,9 +39,23 @@
                 </div>
             </div>
             <div id="modal-content" class="h-full p-4">
-                <div class="flex flex-col p-6 bg-white rounded-2xl shadow-xl gap-6">
+                <div id="destination-list" class="flex flex-col p-6 bg-white rounded-2xl shadow-xl gap-6 transform transition-all duration-300 ease-in-out scale-100 opacity-100">
                     <h3 class="text-2xl font-semibold text-gray-900">Where to?</h3>
-                    <input type="text" class="w-full h-14 border border-gray-300 rounded-lg px-4" placeholder="Search destinations">
+
+                    <div id="search-input" class="flex w-full h-14 border text-sm border-gray-300 rounded-lg px-4 gap-2 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+                            <path fill-rule="evenodd"
+                                d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z"
+                                clip-rule="evenodd" />
+                        </svg>
+
+                        <input 
+                            id="main-input"
+                            type="text"
+                            class="focus:none"
+                            placeholder="Search destinations">
+                    </div>
+
                     <p class="text-sm text-gray-700">Suggested desitnations</p>
                     <div id="suggested-destinations">
 
@@ -46,8 +67,10 @@
             </div>
         </div>
     </section>
-  <script src="button.js"></script>
-  <script src="closeButton.js"></script>
-  <script src="main.js"></script>
+    <script src="button.js"></script>
+    <script src="closeButton.js"></script>
+    <script src="main.js"></script>
+    <script src="searchInput.js"></script>
 </body>
+
 </html>
